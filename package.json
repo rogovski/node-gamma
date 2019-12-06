@@ -12,6 +12,10 @@
     "serverless"
   ],
   "author": "rogowski",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogovski/node-gamma.git"
+  },
   "license": "MIT",
   "dependencies": {
     "winston": "^3.2.1"
