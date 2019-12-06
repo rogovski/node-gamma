@@ -139,7 +139,6 @@ const getConfig = async (path) => {
 
   // prop is fresh and in cache
   if (prop !== undefined && !prop.param.isExpired()) {
-    console.log('cached');
     return prop.value;
   }
 
@@ -147,7 +146,6 @@ const getConfig = async (path) => {
   let result;
   if (prop !== undefined && prop.param.isExpired()) {
     try {
-      console.log('re-fetching');
       result = await prop.param.value;
     } catch (err) {
       throw new InternalError({
@@ -161,7 +159,6 @@ const getConfig = async (path) => {
   // fetch prop for the first time
   let param;
   try {
-    console.log('fetching');
     param = config.ssmParameter(Object.assign({ name: fullPath },
       persistentProps.maxAge ? { maxAge: persistentProps.maxAge } : {}
     ));
