@@ -1,0 +1,22 @@
+{
+  "name": "node-gamma",
+  "version": "0.0.1",
+  "description": "a useful utility for serverless systems in AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "serverless"
+  ],
+  "author": "rogowski",
+  "license": "MIT",
+  "dependencies": {
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.585.0"
+  }
+}
