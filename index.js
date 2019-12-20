@@ -149,7 +149,9 @@ const getConfig = async (path) => {
       result = await prop.param.value;
     } catch (err) {
       throw new InternalError({
-        errorMessage: 'failed to fetch expired config'
+        errorMessage: 'failed to fetch expired config',
+        originalErrorName: err.name,
+        originalErrorMessage: err.message
       });
     }
     prop.value = result;
@@ -165,7 +167,9 @@ const getConfig = async (path) => {
     result = await param.value;
   } catch (err) {
     throw new InternalError({
-      errorMessage: 'failed to fetch new config'
+      errorMessage: 'failed to fetch new config',
+      originalErrorName: err.name,
+      originalErrorMessage: err.message
     });
   }
   persistentProps.props[fullPath] = {
